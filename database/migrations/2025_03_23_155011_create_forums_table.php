@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('cours_id')->constrained('cours')->onDelete('cascade');
             $table->string('nom_utilisateur', 100);
-            $table->string('email_utilisateur', 150);
             $table->text('question');
             $table->timestamps();
             $table->softDeletes();

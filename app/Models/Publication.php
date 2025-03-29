@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Publication extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'utilisateur_id', 'titre', 'lien','content'
+        'utilisateur_id', 'titre', 'lien', 'content'
     ];
 }
