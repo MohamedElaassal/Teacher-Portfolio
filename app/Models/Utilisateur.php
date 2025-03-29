@@ -35,4 +35,14 @@ class Utilisateur extends Authenticatable implements HasName
     {
         return $this->nom ?? $this->prenom ?? $this->email ?? 'Unknown User';
     }
+
+    public function cours()
+    {
+        return $this->hasMany(Cours::class);
+    }
+
+    public function publications()
+    {
+        return $this->hasMany(Publication::class);
+    }
 }

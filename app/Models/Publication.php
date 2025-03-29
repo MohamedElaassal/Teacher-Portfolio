@@ -12,4 +12,9 @@ class Publication extends Model
     protected $fillable = [
         'utilisateur_id', 'titre', 'lien', 'content'
     ];
+
+    public function utilisateur()
+    {
+        return $this->belongsTo(Utilisateur::class);
+    }
 }

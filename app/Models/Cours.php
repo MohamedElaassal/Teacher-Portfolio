@@ -10,6 +10,16 @@ class Cours extends Model
     use HasFactory;
 
     protected $fillable = [
-        'utilisateur_id', 'titre', 'description', 'content'
+        'name', 'utilisateur_id', 'titre', 'description', 'content'
     ];
+
+    public function utilisateur()
+    {
+        return $this->belongsTo(Utilisateur::class);
+    }
+
+    public function forums()
+    {
+        return $this->hasMany(Forum::class);
+    }
 }
