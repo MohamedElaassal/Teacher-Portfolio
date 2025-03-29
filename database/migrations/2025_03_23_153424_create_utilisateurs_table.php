@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
-            $table->string('nom', 100);
-            $table->string('prenom', 100);
+            $table->string('nom', 100)->nullable();
+            $table->string('prenom', 100)->nullable();
             $table->string('email', 150)->unique();
             $table->string('mot_de_passe');
             $table->text('biographie')->nullable();
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('google_scholar')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
