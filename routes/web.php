@@ -15,4 +15,3 @@ Route::get('/publications', Publication::class)->name('publications');
 Route::get('/courses', Cours::class)->name('courses');
 Route::get('/contact', Contact::class)->name('contact');
 
-// Search functionali

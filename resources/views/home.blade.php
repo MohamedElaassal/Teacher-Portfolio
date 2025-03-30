@@ -1,6 +1,7 @@
-<!-- filepath: c:\xampp\htdocs\Teacher-Portfolio\resources\views\livewire\home.blade.php -->
+@include('livewire.nav')
 <div class="min-h-screen bg-gray-100 text-gray-800">
-    <!-- Hero Section -->
+
+
     <section class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
         <div class="text-center">
             <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
