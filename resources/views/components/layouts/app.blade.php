@@ -8,6 +8,12 @@
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
     <body>
-        {{ $slot }}
+        @include('livewire.nav')
+
+        <main class="mb-2">
+            {{ $slot }}
+        </main>
+        @include('livewire.footer')
+
     </body>
 </html>

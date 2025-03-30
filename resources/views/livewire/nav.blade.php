@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation</title>
-    @vite('resources/css/app.css') <!-- Tailwind CSS -->
-    <script src="//unpkg.com/alpinejs" defer></script> <!-- Alpine.js -->
+
 </head>
 <body>
-    <div x-data="{ isOpen: false }" class="bg-white shadow-md">
+    <div x-data="{ isOpen: false }" class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="/" class="text-2xl font-bold text-blue-600 hover:text-blue-800">
@@ -17,10 +16,11 @@
 
             <!-- Desktop Menu -->
             <div class="hidden sm:flex space-x-8 text-lg font-medium">
-                <a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                <a href="/about-us" class="text-gray-700 hover:text-blue-600 transition">About Us</a>
-                <a href="/publications" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
-                <a href="/contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                <a href="/" class="hover:underline text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="/about-us" class="hover:underline text-gray-700 hover:text-indigo-600 transition">About Us</a>
+                <a href="/publications" class="hover:underline text-gray-700 hover:text-indigo-600 transition">Publications</a>
+                <a href="/courses" class="hover:underline text-gray-700 hover:text-indigo-600 transition">Courses</a>
+                <a href="/contact" class="hover:underline text-gray-700 hover:text-indigo-600 transition">Contact</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -36,7 +36,8 @@
             <ul class="flex flex-col items-center space-y-4 py-4 text-lg font-medium">
                 <li><a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
                 <li><a href="/about-us" class="text-gray-700 hover:text-blue-600 transition">About Us</a></li>
-                <li><a href="/publications" class="text-gray-700 hover:text-blue-600 transition">Projects</a></li>
+                <li><a href="/publications" class="text-gray-700 hover:text-blue-600 transition">Publications</a></li>
+                <li><a href="/courses" class="text-gray-700 hover:text-blue-600 transition">Courses</a></li>
                 <li><a href="/contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a></li>
             </ul>
         </div>
