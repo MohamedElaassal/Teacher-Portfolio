@@ -1,4 +1,3 @@
-
 <div class="mt-6 py-4 lg:py-8 relative">
     <img src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png" class="h-2/5 lg:h-full w-full lg:w-1/2 absolute inset-0 object-cover object-center xl:block hidden" alt="map" />
     <div class="xl:mx-auto xl:container relative">
@@ -46,7 +45,7 @@
                             <textarea class="mt-3 text-base dark:bg-gray-800 border-2 w-11/12 lg:w-full xl:w-10/12 resize-none hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border-black xl:h-40 py-5 pl-4 text-gray-800 dark:text-white" type="text" placeholder="Write us something..." aria-label="enter your message input"></textarea>
                         </div>
                         <div class="py-5">
-                            <button class="bg-indigo-700 py-3 md:py-5 dark:bg-white dark:text-gray-800 px-5 md:px-10 bg-gray-900 text-white hover:opacity-90 ease-in duration-150 text-sm md:text-lg tracking-wider font-semibold focus:border-4 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Send</button>
+                            <button class="cursor-pointer bg-indigo-700 py-3 md:py-5 dark:bg-white dark:text-gray-800 px-5 md:px-10 bg-gray-900 text-white hover:opacity-90 ease-in duration-150 text-sm md:text-lg tracking-wider font-semibold focus:border-4 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Send</button>
                         </div>
                     </div>
                 </div>

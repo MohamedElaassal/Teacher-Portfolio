@@ -1,4 +1,4 @@
-<div class="bg-gray-50 py-16">
+<div >
     <div class="container mx-auto px-4">
         <!-- Header Section -->
         <div class="mb-12">
@@ -9,7 +9,7 @@
         <div class="flex flex-wrap items-center justify-between">
             <!-- Teacher's Photo -->
             <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
-                <img src="{{ asset('storage/images/teacherImg.png') }}" alt="Teacher Photo" class="rounded-lg shadow-lg w-full">
+                <img src="{{ asset('storage/images/teacherImg.png') }}" alt="Teacher Photo" class="rounded-lg shadow-lg w-full opacity-95 hover:opacity-100">
             </div>
 
             <!-- Biography -->
@@ -71,7 +71,7 @@
         <div class="mt-16 text-center">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">Want to Learn More?</h2>
             <p class="text-gray-600 mb-6">Feel free to reach out to me for collaborations, mentorship, or any inquiries.</p>
-            <button wire:click="redirectToContact" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transform transition-transform duration-300 hover:scale-105">
+            <button wire:click="redirectToContact" class="cursor-pointer px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transform transition-transform duration-300 hover:scale-105">
                 Contact
             </button>
         </div>

@@ -3,29 +3,29 @@
         <div class="text-center">
             <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
             <p class="text-lg">Explore my work, publications, and courses.</p>
-            <button class="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200">
+            <button class="cursor-pointer mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-200">
                 Get Started
             </button>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section id="about-us" class="py-16 bg-white">
+    <section id="about-us" class="py-16 bg-gray-100">
         @livewire('about-us')
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="py-16 bg-gray-50">
+    <section id="publications" class="py-16 bg-gray-100">
         @livewire('publication')
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-16 bg-white">
+    <section id="courses" class="py-16 bg-gray-100">
         @livewire('cours')
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50">
+    <section id="contact" class="py-16 bg-gray-100">
         @livewire('contact')
     </section>
 </div>
