@@ -69,7 +69,7 @@
 
         <!-- Call-to-Action -->
         <div class="mt-16 text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Want to Learn More?</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Get in touch 👇</h2>
             <p class="text-gray-600 mb-6">Feel free to reach out to me for collaborations, mentorship, or any inquiries.</p>
             <button wire:click="redirectToContact" class="cursor-pointer px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transform transition-transform duration-300 hover:scale-105">
                 Contact

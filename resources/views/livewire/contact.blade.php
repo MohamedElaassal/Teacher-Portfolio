@@ -9,7 +9,7 @@
                     <div class="w-full 2xl:pl-48 xl:pt-1">
                         <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">We’re Here</h1>
                         <div class="w-full md:w-10/12 mt-3">
-                            <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider">We believe digital innovation is at the heart of every business success</h2>
+                            <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider">We believe digital innovation is at the heart of every learning success</h2>
                             <div class="mt-4 md:mt-8">
                                 <h2 class="text-sm md:text-base text-indigo-700 font-semibold">Address</h2>
                                 <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">Office #13, NSTP, NUST University H-12 Sector, Islamabad</h2>
