@@ -13,11 +13,11 @@
             <div>
                 <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="/" class="hover:font-medium hover:text-white hover:underline transition">Home</a></li>
-                    <li><a href="/about-us" class="hover:font-medium hover:text-white hover:underline transition">About Us</a></li>
-                    <li><a href="/publications" class="hover:font-medium hover:text-white hover:underline transition">Publications</a></li>
-                    <li><a href="/courses" class="hover:font-medium hover:text-white hover:underline transition">Courses</a></li>
-                    <li><a href="/contact" class="hover:font-medium hover:text-white hover:underline transition">Contact</a></li>
+                    <li><a wire:navigate href="/" class="hover:font-medium hover:text-white hover:underline transition">Home</a></li>
+                    <li><a wire:navigate href="/about-us" class="hover:font-medium hover:text-white hover:underline transition">About Us</a></li>
+                    <li><a wire:navigate href="/publications" class="hover:font-medium hover:text-white hover:underline transition">Publications</a></li>
+                    <li><a wire:navigate href="/courses" class="hover:font-medium hover:text-white hover:underline transition">Courses</a></li>
+                    <li><a wire:navigate href="/contact" class="hover:font-medium hover:text-white hover:underline transition">Contact</a></li>
                 </ul>
             </div>
 

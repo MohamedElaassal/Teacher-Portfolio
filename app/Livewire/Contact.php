@@ -3,6 +3,9 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Title;
+
+#[Title('Contact')]
 
 class Contact extends Component
 {

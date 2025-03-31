@@ -10,7 +10,7 @@
     <body>
         @include('livewire.nav')
 
-        <main class="mb-2">
+        <main >
             {{ $slot }}
         </main>
         @include('livewire.footer')
