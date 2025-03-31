@@ -1,4 +1,4 @@
-<footer class="bg-indigo-700 text-gray-100">
+<footer class="bg-indigo-700 text-gray-100 relative">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
@@ -84,4 +84,18 @@
             </p>
         </div>
     </div>
+
+    <div class="absolute  top-4 right-4">
+        <button onclick="scrollToTop()" class="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition duration-300 ease-in-out">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </footer>

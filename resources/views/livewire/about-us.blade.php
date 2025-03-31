@@ -16,7 +16,7 @@
             <div class="w-full lg:w-2/3 lg:pl-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Biography</h2>
                 <p class="text-gray-600 leading-relaxed mb-6">
-                    Hello! I'm John Doe, a passionate educator with over 10 years of experience in teaching and mentoring students. My mission is to inspire and empower learners to achieve their full potential through innovative teaching methods and personalized guidance.
+                    Hello! I'm John Doe aka <span class="font-bold text-xl text-blue-800">L</span><span class="font-medium text-indigo-500">Zz</span>, a passionate educator with over 10 years of experience in teaching and mentoring students. My mission is to inspire and empower learners to achieve their full potential through innovative teaching methods and personalized guidance.
                 </p>
                 <p class="text-gray-600 leading-relaxed">
                     I specialize in Computer Science and Software Development, with a strong background in both back-end and front-end technologies. Over the years, I have worked with diverse groups of students, helping them excel academically and personally.
