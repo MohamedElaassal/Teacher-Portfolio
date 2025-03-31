@@ -1,5 +1,5 @@
 <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-8">Courses</h2>
+    <h2 class="text-3xl font-bold text-indigo-500 mb-8">Courses</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white p-4 rounded-lg shadow-md">
             <h3 class="text-xl font-semibold">Course Title 1</h3>

@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4">
         <!-- Header Section -->
         <div class="mb-12">
-            <h1 class="text-4xl  font-extrabold text-indigo-600">About Me</h1>
+            <h1 class="text-4xl  font-extrabold text-indigo-500">About Me</h1>
         </div>
 
         <!-- Main Content -->

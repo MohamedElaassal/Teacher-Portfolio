@@ -1,5 +1,5 @@
 <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-8">Publications</h2>
+    <h2 class="text-3xl font-bold text-indigo-500 mb-8">Publications</h2>
     <ul class="space-y-4">
         <li class="bg-white p-4 rounded-lg shadow-md">
             <h3 class="text-xl font-semibold">Publication Title 1</h3>
