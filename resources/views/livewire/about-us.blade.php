@@ -2,7 +2,10 @@
     <div class="container mx-auto px-4">
         <!-- Header Section -->
         <div class="mb-12">
-            <h1 class="text-4xl  font-extrabold text-indigo-500">About Me</h1>
+            <h1 class="text-4xl  font-extrabold text-indigo-500">
+                <span class="text-blue-900">A</span><span class="text-indigo-600">b</span><span class="text-blue-900">o</span><span class="text-indigo-600">u</span><span class="text-blue-900">t</span>
+                <span class="text-indigo-600">M</span><span class="text-blue-900">e</span>
+            </h1>
         </div>
 
         <!-- Main Content -->
