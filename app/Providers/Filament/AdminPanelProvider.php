@@ -52,6 +52,14 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+
+            ])
+            ->brandName('LZz')
+            ->favicon(asset('storage/images/logo.png'))
+            ->brandLogo(asset('storage/images/logo.png'))
+            ->brandLogoHeight('2.5rem')
+            ->sidebarCollapsibleOnDesktop();
+
+
     }
 }

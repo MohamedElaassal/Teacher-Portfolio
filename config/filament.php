@@ -114,6 +114,6 @@ return [
 
     'auth' => [
         'guard' => 'web',
-        'user' => App\Models\Utilisateur::class,
+        'user' => App\Models\User::class,
     ],
 ];
