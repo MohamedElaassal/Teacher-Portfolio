@@ -1,56 +1,100 @@
-<div class="mt-6 py-4 lg:py-8 relative">
-    <img src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png" class="h-2/5 lg:h-full w-full lg:w-1/2 absolute inset-0 object-cover object-center xl:block hidden" alt="map" />
+<div class="mt-6 py-4 lg:py-8 relative"
+     :class="{ 'bg-gray-900 text-white': darkMode, 'bg-indigo-700 text-gray-100': !darkMode }">
+    <!-- Background Image -->
+    <img src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
+         class="h-2/5 lg:h-full w-full lg:w-1/2 absolute inset-0 object-cover object-center xl:block hidden opacity-10"
+         alt="map" />
+
     <div class="xl:mx-auto xl:container relative">
         <div class="flex flex-wrap xl:mx-auto xl:container">
+            <!-- Contact Info Section -->
             <div class="w-full relative lg:w-1/2 xl:mt-10 mb-10 2xl:pr-24 2xl:pl-0 xl:pl-12 pl-0">
-                <img src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png" class="h-full w-full xl:w-1/2 absolute inset-0 bg-cover bg-center xl:hidden" alt="map" />
+                <img src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
+                     class="h-full w-full xl:w-1/2 absolute inset-0 bg-cover bg-center xl:hidden opacity-10"
+                     alt="map" />
 
-                <div class="w-full flex flex-col items-start xl:justify-start relative z-20 xl:px-0 px-4 xl:py-0 py-4">
+                <div class="w-full flex flex-col items-start relative z-20 xl:px-0 px-4 xl:py-0 py-4">
                     <div class="w-full 2xl:pl-48 xl:pt-1">
-                        <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">We’re Here</h1>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider"
+                            :class="{ 'text-white': darkMode, 'text-white': !darkMode }">
+                            We’re Here
+                        </h1>
                         <div class="w-full md:w-10/12 mt-3">
-                            <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider">We believe digital innovation is at the heart of every learning success</h2>
-                            <div class="mt-4 md:mt-8">
-                                <h2 class="text-sm md:text-base text-indigo-700 font-semibold">Address</h2>
-                                <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">Office #13, NSTP, NUST University H-12 Sector, Islamabad</h2>
+                            <h2 class="text-base md:text-lg leading-8 tracking-wider"
+                                :class="{ 'text-gray-400': darkMode, 'text-gray-200': !darkMode }">
+                                We believe digital innovation is at the heart of every learning success
+                            </h2>
+
+                            <!-- Address -->
+                            <div class="mt-6">
+                                <h3 class="text-sm md:text-base font-semibold text-indigo-400">Address</h3>
+                                <p class="mt-2 text-base md:text-lg leading-7 text-gray-300">
+                                    Office #13, NSTP, NUST University H-12 Sector, Islamabad
+                                </p>
                             </div>
-                            <div class="mt-4 md:mt-8">
-                                <h2 class="text-sm md:text-base text-indigo-700 font-semibold">Contact</h2>
-                                <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">+92 051 4567890 (Phone)</h2>
-                                <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">+92 123 4567890 (Cell)</h2>
+
+                            <!-- Contact -->
+                            <div class="mt-6">
+                                <h3 class="text-sm md:text-base font-semibold text-indigo-400">Contact</h3>
+                                <p class="mt-2 text-base md:text-lg leading-7 text-gray-300">+92 051 4567890 (Phone)</p>
+                                <p class="mt-1 text-base md:text-lg leading-7 text-gray-300">+92 123 4567890 (Cell)</p>
                             </div>
-                            <div class="mt-4 md:mt-8">
-                                <h2 class="text-sm md:text-base text-indigo-700 font-semibold">Email</h2>
-                                <h2 class="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">alphasquad@example.com</h2>
+
+                            <!-- Email -->
+                            <div class="mt-6">
+                                <h3 class="text-sm md:text-base font-semibold text-indigo-400">Email</h3>
+                                <p class="mt-2 text-base md:text-lg leading-7 text-gray-300">alphasquad@example.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Form Section -->
             <div class="w-full lg:w-1/2 xl:pt-10 lg:pl-24">
                 <div class="flex flex-col items-start xl:justify-start 2xl:justify-end xl:px-0 px-4">
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-indigo-700">Let’s Talk</h1>
-                    <div class="w-full 2xl:w-8/12 mt-3" role="form">
-                        <h2 class="text-gray-800 dark:text-white text-base md:text-lg leading-8 tracking-wider">For enquiries, please email us using the form below</h2>
-                        <div class="mt-4 md:mt-8">
-                            <p class="text-gray-800 dark:text-white text-base font-medium">Name</p>
-                            <input class="mt-3 text-base dark:bg-gray-800 border-2 w-11/12 lg:w-full xl:w-10/12 hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border-black py-5 pl-4 text-gray-800 dark:text-white" type="text" placeholder="Justin Timberlake" aria-label="enter your name input" />
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-indigo-300">
+                        Let’s Talk
+                    </h1>
+                    <div class="w-full 2xl:w-8/12 mt-4" role="form">
+                        <p class="text-base md:text-lg leading-8 tracking-wider text-gray-300">
+                            For enquiries, please email us using the form below
+                        </p>
+
+                        <!-- Name Field -->
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-200 mb-2">Name</label>
+                            <input type="text"
+                                   placeholder="Justin Timberlake"
+                                   class="w-full border border-gray-500 bg-gray-800 text-white placeholder-gray-400 rounded-md py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
                         </div>
-                        <div class="mt-4 md:mt-8">
-                            <p class="text-gray-800 dark:text-white text-base font-medium">Email Address</p>
-                            <input class="mt-3 text-base dark:bg-gray-800 border-2 w-11/12 lg:w-full xl:w-10/12 hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border-black py-5 pl-4 text-gray-800 dark:text-white" type="email" placeholder="example@mail.com" aria-label="enter your email input" />
+
+                        <!-- Email Field -->
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
+                            <input type="email"
+                                   placeholder="example@mail.com"
+                                   class="w-full border border-gray-500 bg-gray-800 text-white placeholder-gray-400 rounded-md py-3 px-4 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
                         </div>
-                        <div class="mt-4 md:mt-8">
-                            <p class="text-gray-800 dark:text-white text-base font-medium">Message</p>
-                            <textarea class="mt-3 text-base dark:bg-gray-800 border-2 w-11/12 lg:w-full xl:w-10/12 resize-none hover:border-indigo-600 focus:border-indigo-600 focus:outline-none border-black xl:h-40 py-5 pl-4 text-gray-800 dark:text-white" type="text" placeholder="Write us something..." aria-label="enter your message input"></textarea>
+
+                        <!-- Message Field -->
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-200 mb-2">Message</label>
+                            <textarea placeholder="Write us something..."
+                                      class="w-full border border-gray-500 bg-gray-800 text-white placeholder-gray-400 rounded-md py-3 px-4 h-32 resize-none focus:ring-2 focus:ring-indigo-500 focus:outline-none"></textarea>
                         </div>
-                        <div class="py-5">
-                            <button class="cursor-pointer bg-indigo-700 py-3 md:py-5 dark:bg-white dark:text-gray-800 px-5 md:px-10 bg-gray-900 text-white hover:opacity-90 ease-in duration-150 text-sm md:text-lg tracking-wider font-semibold focus:border-4 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Send</button>
+
+                        <!-- Button -->
+                        <div class="mt-6">
+                            <button
+                                class="bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-600 focus:ring-offset-2 focus:outline-none">
+                                Send Message
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End Right Section -->
         </div>
     </div>
 </div>
-

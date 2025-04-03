@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation</title>
-</head>
-<body>
-    <div x-data="{ isOpen: false, darkMode: false }" :class="{ 'bg-gray-900 text-gray-100 mb-2': darkMode, 'mb-2 bg-white text-gray-900': !darkMode }" class="shadow-md sticky top-0 z-50">
+    <div x-data="{ isOpen: false, darkMode: $darkMode }" :class="{ 'bg-gray-900 text-gray-100 ': darkMode, ' bg-white text-gray-900': !darkMode }" class="shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a wire:navigate href="/" class="text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
@@ -75,5 +67,4 @@
             </ul>
         </div>
     </div>
-</body>
-</html>
+

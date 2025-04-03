@@ -9,12 +9,11 @@
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
     <body>
-        @include('livewire.nav')
-
+        @include('livewire.nav', ['darkMode' => 'darkMode'])
         <main
-        :class="{ 'bg-gray-900 text-white mb-2': darkMode, 'mb-2 bg-white text-gray-900': !darkMode }">
+        :class="{ 'bg-gray-900 text-white ': darkMode, ' bg-white text-gray-900': !darkMode }">
              {{ $slot }}
         </main>
-        @include('livewire.footer')
+        @include('livewire.footer', ['darkMode' => 'darkMode'])
     </body>
 </html>

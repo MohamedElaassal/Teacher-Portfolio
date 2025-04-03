@@ -1,31 +1,33 @@
 <div class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-    <section class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <section class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white" :class="{ 'bg-gray-900 text-white': darkMode, 'bg-gradient-to-r from-blue-500 to-purple-600 text-white': !darkMode }">
         <div class="text-center">
-            <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
-            <p class="text-lg">Explore my work, publications, and courses.</p>
+            <h1 class="text-5xl font-bold mb-4" :class="{ 'text-white': darkMode, 'text-white': !darkMode }">Welcome to My Portfolio</h1>
+            <p class="text-lg" :class="{ 'text-gray-200': darkMode, 'text-white': !darkMode }">Explore my work, publications, and courses.</p>
             <button class="cursor-pointer mt-6 px-6 py-3 bg-white dark:bg-gray-800 text-blue-600 dark:text-gray-200 font-semibold rounded-lg shadow-md hover:bg-gray-200 dark:hover:bg-gray-700">
                 Get Started
             </button>
         </div>
     </section>
 
+
     <!-- About Us Section -->
-    <section id="about-us" class="py-16 bg-gray-100 dark:bg-gray-900">
-        @livewire('about-us')
+    <section :class="{ 'my-4 py-16 bg-gray-900 text-white ': darkMode, 'my-4 py-16  bg-white text-gray-900': !darkMode }" id="about-us"
+    :class="{ 'py-16 bg-gray-900 text-white ': darkMode, 'py-16  bg-white text-gray-900': !darkMode }">
+        @livewire('about-us', ['darkMode' => 'darkMode'])
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="py-16 bg-gray-100 dark:bg-gray-900">
-        @livewire('publication')
+    <section :class="{ 'py-16 bg-gray-900 text-white ': darkMode, 'py-16  bg-white text-gray-900': !darkMode }" id="publications">
+        @livewire('publication', ['darkMode' => 'darkMode'])
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-16 bg-gray-100 dark:bg-gray-900">
-        @livewire('cours')
+    <section :class="{ 'py-16 my-4 bg-gray-900 text-white ': darkMode, 'py-16 my-4  bg-white text-gray-900': !darkMode }" id="courses">
+        @livewire('cours', ['darkMode' => 'darkMode'])
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-900">
-        @livewire('contact')
+    <section :class="{ 'py-16 bg-gray-900 text-white ': darkMode, 'py-16  bg-white text-gray-900': !darkMode }" id="contact">
+        @livewire('contact', ['darkMode' => 'darkMode'])
     </section>
 </div>
