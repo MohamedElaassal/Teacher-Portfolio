@@ -1,4 +1,4 @@
-<footer :class="{ 'bg-gray-900 text-white': darkMode, 'bg-indigo-700 text-gray-100': !darkMode }"  x-data="{ darkMode: $darkMode }">
+<footer :class="{ 'bg-gray-900 text-white relative': darkMode, 'bg-indigo-700 text-gray-100 relative': !darkMode }"  x-data="{ darkMode: $darkMode }">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
