@@ -15,6 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Hidden;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class CoursResource extends Resource
@@ -27,6 +28,7 @@ class CoursResource extends Resource
 
     public static function form(Form $form): Form
     {
+        set_time_limit(300);
         return $form
             ->schema([
                 TextInput::make('titre')
@@ -34,7 +36,15 @@ class CoursResource extends Resource
                     ->maxLength(255),
                 Textarea::make('description')
                     ->maxLength(65535),
-                FileUpload::make('content'),
+                    FileUpload::make('content')
+                    ->disk('do')
+                    ->directory(env('DO_DIRECTORY', 'uploads')) // fallback to 'uploads' if not in .env
+                    ->visibility('public')
+                    ->preserveFilenames()
+                    ->getUploadedFileUrlUsing(function ($file) {
+                        return config('filesystems.disks.do.url') . '/' .
+                            env('DO_DIRECTORY', 'uploads') . '/' . $file->getClientOriginalName();
+                    }),
                 Hidden::make('utilisateur_id')
                     ->default(fn () => Auth::id())
                     ->required(),
