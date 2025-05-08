@@ -17,10 +17,7 @@ class Publication extends Component
         $this->publications = PublicationModel::all()->toArray();
     }
 
-    public function amount(): int
-    {
-        return count($this->publications);
-    }
+
 
     public function render()
     {

@@ -8,7 +8,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex flex-wrap items-center justify-between" :class="{ 'bg-gray-900 text-white': darkMode, 'bg-white text-gray-900': !darkMode }">
+    <div class="flex flex-wrap items-center justify-between" :class="{ 'bg-gray-900 text-gray-100': darkMode, 'bg-white text-gray-900': !darkMode }">
         <!-- Teacher's Photo -->
         <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
             <img src="{{ asset('storage/images/teacherImg.png') }}" alt="Teacher Photo" class="rounded-lg shadow-lg w-full opacity-95 hover:opacity-100">
@@ -16,13 +16,11 @@
 
         <!-- Biography -->
         <div class="w-full lg:w-2/3 lg:pl-12">
-            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">Biography</h2>
+            <h2 class="text-3xl font-bold   mb-4">Biography</h2>
             <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                Hello! I'm John Doe aka <span class="font-bold text-xl text-blue-800 dark:text-blue-300">L</span><span class="font-medium text-indigo-500 dark:text-indigo-300">Zz</span>, a passionate educator with over 10 years of experience in teaching and mentoring students. My mission is to inspire and empower learners to achieve their full potential through innovative teaching methods and personalized guidance.
+                Hello! I'm {{ $admin->name }}  aka <span class="font-bold text-xl text-blue-800 dark:text-blue-300">L</span><span class="font-medium text-indigo-500 dark:text-indigo-300">Zz</span>, {{ $admin->biographie }}
             </p>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                I specialize in Computer Science and Software Development, with a strong background in both back-end and front-end technologies. Over the years, I have worked with diverse groups of students, helping them excel academically and personally.
-            </p>
+
         </div>
     </div>
 
