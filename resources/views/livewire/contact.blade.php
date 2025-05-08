@@ -1,4 +1,4 @@
-<div class="mt-6 py-4 lg:py-8 relative"
+<div class="py-4 lg:py-8 relative"
      :class="{ 'bg-gray-900 text-white': darkMode, 'bg-indigo-700 text-gray-100': !darkMode }">
     <!-- Background Image -->
     <img src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"

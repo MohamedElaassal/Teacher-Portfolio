@@ -9,25 +9,23 @@
         </div>
     </section>
 
-
     <!-- About Us Section -->
-    <section :class="{ 'my-4 py-16 bg-gray-900 text-white ': darkMode, 'my-4 py-16  bg-white text-gray-900': !darkMode }" id="about-us"
-    :class="{ 'py-16 bg-gray-900 text-white ': darkMode, 'py-16  bg-white text-gray-900': !darkMode }">
+    <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="about-us">
         @livewire('about-us', ['darkMode' => 'darkMode'])
     </section>
 
     <!-- Publications Section -->
-    <section :class="{ 'py-16 bg-gray-900 text-white ': darkMode, 'py-16  bg-white text-gray-900': !darkMode }" id="publications">
+    <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="publications">
         @livewire('publication', ['darkMode' => 'darkMode'])
     </section>
 
     <!-- Courses Section -->
-    <section :class="{ 'py-16 my-4 bg-gray-900 text-white ': darkMode, 'py-16 my-4  bg-white text-gray-900': !darkMode }" id="courses">
+    <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="courses">
         @livewire('cours', ['darkMode' => 'darkMode'])
     </section>
 
     <!-- Contact Section -->
-    <section :class="{ 'py-16 bg-gray-900 text-white ': darkMode, 'py-16  bg-white text-gray-900': !darkMode }" id="contact">
+    <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="contact">
         @livewire('contact', ['darkMode' => 'darkMode'])
     </section>
 </div>

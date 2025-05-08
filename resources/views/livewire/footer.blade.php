@@ -1,4 +1,4 @@
-<footer :class="{ 'bg-gray-900 text-white relative': darkMode, 'bg-indigo-700 text-gray-100 relative': !darkMode }"  x-data="{ darkMode: $darkMode }">
+<footer :class="{ 'bg-gray-900 text-white relative': darkMode, 'bg-indigo-700 text-gray-100 relative': !darkMode }"  x-data="{ darkMode: $darkMode, showScrollButton: false }">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
@@ -104,11 +104,19 @@
         </div>
     </div>
 
-    <div class="absolute top-4 right-4">
+    <!-- Scroll to top button with visibility control -->
+    <div x-show="showScrollButton"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 transform translate-y-2"
+         x-transition:enter-end="opacity-100 transform translate-y-0"
+         x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="opacity-100 transform translate-y-0"
+         x-transition:leave-end="opacity-0 transform translate-y-2"
+         class="fixed bottom-8 right-8 z-50">
         <button @click="scrollToTop()"
             class="p-3 rounded-full shadow-lg transition duration-300 ease-in-out"
             :class="{ 'bg-gray-700 hover:bg-gray-600': darkMode, 'bg-indigo-600 hover:bg-indigo-500': !darkMode }">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
             </svg>
         </button>
@@ -118,5 +126,45 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Check scroll position on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkScrollPosition();
+
+            // Add scroll event listener
+            window.addEventListener('scroll', checkScrollPosition);
+
+            function checkScrollPosition() {
+                // Show button when user scrolls down 300px from the top
+                const scrollThreshold = 300;
+                if (window.scrollY > scrollThreshold) {
+                    Alpine.store('scrollButton', true);
+                    document.querySelectorAll('[x-data]').forEach(el => {
+                        if (el.__x) {
+                            el.__x.updateElements(el);
+                        }
+                    });
+                    // Set Alpine.js showScrollButton to true
+                    document.querySelectorAll('[x-data]').forEach(el => {
+                        if (el.__x && typeof el.__x.$data.showScrollButton !== 'undefined') {
+                            el.__x.$data.showScrollButton = true;
+                        }
+                    });
+                } else {
+                    Alpine.store('scrollButton', false);
+                    document.querySelectorAll('[x-data]').forEach(el => {
+                        if (el.__x) {
+                            el.__x.updateElements(el);
+                        }
+                    });
+                    // Set Alpine.js showScrollButton to false
+                    document.querySelectorAll('[x-data]').forEach(el => {
+                        if (el.__x && typeof el.__x.$data.showScrollButton !== 'undefined') {
+                            el.__x.$data.showScrollButton = false;
+                        }
+                    });
+                }
+            }
+        });
     </script>
 </footer>
