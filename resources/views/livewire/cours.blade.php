@@ -1,8 +1,8 @@
-<div class="container mx-auto px-4 py-8" x-data="{ darkMode: $darkMode }">
+<div class="container mx-auto px-4 py-10" x-data="{ darkMode: $darkMode }">
     <!-- Section Title -->
-    <h2 class="text-3xl font-extrabold text-center mb-10" :class="{ 'text-white': darkMode, 'text-indigo-600': !darkMode }">
-        <span class="text-indigo-600 dark:text-indigo-400">Courses</span>
-    </h2>
+    <h1 class="text-3xl font-extrabold mb-10 pt-6" :class="{ 'text-indigo-300': darkMode, 'text-indigo-600': !darkMode }">
+        <span class="text-blue-900 dark:text-blue-300">C</span><span class="text-indigo-600 dark:text-indigo-400">o</span><span class="text-blue-900 dark:text-blue-300">u</span><span class="text-indigo-600 dark:text-indigo-400">r</span><span class="text-indigo-600 dark:text-indigo-400">s</span><span class="text-blue-900 dark:text-blue-300">e</span><span class="text-indigo-600 dark:text-indigo-400">s</span>
+    </h1>
 
     <!-- Course Cards with Carousel -->
     <div x-data="{
@@ -28,26 +28,27 @@
         },
         selectedCourse: null,
         showModal: false
-    }" class="relative">
+    }" class="relative my-4 py-6">
         <!-- Cards Container -->
-        <div class="flex flex-wrap justify-center gap-6">
+        <div class="flex flex-wrap justify-center gap-8">
             <template x-for="(course, index) in getVisibleCourses()" :key="index">
-                <div class="w-full md:w-1/3 lg:w-1/4 p-4 cursor-pointer transition transform hover:scale-105"
+                <div class="w-full md:w-1/3 lg:w-1/4 p-4 cursor-pointer transition transform hover:scale-105 hover:shadow-xl"
                     @click="selectedCourse = course; showModal = true"
-                    :class="{ 'bg-gray-800 text-white': darkMode, 'bg-white text-gray-900': !darkMode }"
+                    :class="{ 'bg-gray-800 text-white border border-gray-700': darkMode, 'bg-white text-gray-900 border border-gray-200': !darkMode }"
                     class="rounded-lg shadow-lg">
                     <!-- Card Content -->
                     <div class="h-full flex flex-col">
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2" x-text="course.titre"></h3>
-                            <p class="text-sm mb-3" x-text="course.description"></p>
+                            <h3 class="text-xl font-bold mb-3" x-text="course.titre" :class="{ 'text-indigo-300': darkMode, 'text-indigo-600': !darkMode }"></h3>
+                            <p class="text-sm mb-3" x-text="course.description" :class="{ 'text-gray-300': darkMode, 'text-gray-600': !darkMode }"></p>
                         </div>
                         <div class="mt-auto">
                             <!-- PDF Thumbnail (small preview) -->
-                            <div class="relative w-full h-24 mb-2 overflow-hidden rounded border border-gray-300">
+                            <div class="relative w-full h-28 mb-2 overflow-hidden rounded border"
+                                 :class="{ 'border-gray-600': darkMode, 'border-gray-300': !darkMode }">
                                 <iframe :src="generatePdfUrl(course.content)" class="absolute inset-0 w-full h-full"></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800 bg-opacity-50 flex items-end justify-center">
-                                    <p class="text-white text-sm p-1">Click to view</p>
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-800 bg-opacity-60 flex items-end justify-center">
+                                    <p class="text-white text-sm p-2 bg-indigo-600 bg-opacity-80 rounded-t-md">Click to view</p>
                                 </div>
                             </div>
                         </div>
@@ -60,44 +61,44 @@
         <template x-if="totalSlides > 1">
             <div>
                 <button @click="prevSlide"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-indigo-600 text-white p-2 rounded-full shadow-lg z-10">
+                    class="absolute -left-4 top-1/2 -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg z-10 transition duration-300">
                     &larr;
                 </button>
                 <button @click="nextSlide"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-indigo-600 text-white p-2 rounded-full shadow-lg z-10">
+                    class="absolute -right-4 top-1/2 -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg z-10 transition duration-300">
                     &rarr;
                 </button>
             </div>
         </template>
 
         <!-- Pagination Dots -->
-        <div class="flex justify-center mt-6 space-x-2">
+        <div class="flex justify-center mt-8 space-x-3">
             <template x-for="(_, i) in Array.from({ length: totalSlides })" :key="i">
                 <button @click="activeSlide = i"
-                    class="w-3 h-3 rounded-full transition-colors"
-                    :class="{ 'bg-indigo-600': activeSlide === i, 'bg-gray-300': activeSlide !== i }">
+                    class="w-3 h-3 rounded-full transition-colors duration-300"
+                    :class="{ 'bg-indigo-600': activeSlide === i, 'bg-gray-300 dark:bg-gray-600': activeSlide !== i }">
                 </button>
             </template>
         </div>
 
         <!-- Modal for PDF Viewer -->
         <div x-show="showModal" @click.away="showModal = false"
-            class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
-            <div :class="{ 'bg-gray-800 text-white': darkMode, 'bg-white text-gray-900': !darkMode }"
+            class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
+            <div :class="{ 'bg-gray-800 text-white border border-gray-700': darkMode, 'bg-white text-gray-900 border border-gray-200': !darkMode }"
                 class="w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-2xl font-bold" x-text="selectedCourse?.titre"></h3>
-                    <button @click="showModal = false" class="text-gray-500 hover:text-gray-700">&times;</button>
+                <div class="flex justify-between items-center mb-6 border-b pb-4" :class="{ 'border-gray-700': darkMode, 'border-gray-200': !darkMode }">
+                    <h3 class="text-2xl font-bold" x-text="selectedCourse?.titre" :class="{ 'text-indigo-300': darkMode, 'text-indigo-600': !darkMode }"></h3>
+                    <button @click="showModal = false" class="text-3xl hover:opacity-75 transition duration-300">&times;</button>
                 </div>
-                <p class="mb-4" x-text="selectedCourse?.description"></p>
-                <div class="w-full h-96 mb-4">
+                <p class="mb-6 text-base" x-text="selectedCourse?.description" :class="{ 'text-gray-300': darkMode, 'text-gray-700': !darkMode }"></p>
+                <div class="w-full h-96 mb-6">
                     <iframe x-show="selectedCourse"
                         :src="selectedCourse ? generatePdfUrl(selectedCourse.content) : ''"
-                        class="w-full h-full border-0 rounded"></iframe>
+                        class="w-full h-full border-0 rounded shadow-md"></iframe>
                 </div>
                 <div class="flex justify-end">
                     <a x-show="selectedCourse" :href="selectedCourse ? generatePdfUrl(selectedCourse.content) : ''"
-                        download class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                        download class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded font-medium transition duration-300">
                         Download PDF
                     </a>
                 </div>

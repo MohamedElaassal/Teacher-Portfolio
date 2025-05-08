@@ -9,23 +9,43 @@
         </div>
     </section>
 
+    <div class="flex  w-full">
+        <hr class="w-3/5 border-1 border-indigo-600">
+    </div>
+
     <!-- About Us Section -->
     <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="about-us">
         @livewire('about-us', ['darkMode' => 'darkMode'])
     </section>
+
+    <div class="flex  w-full">
+        <hr class="w-3/5 border-1 border-indigo-600">
+    </div>
 
     <!-- Publications Section -->
     <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="publications">
         @livewire('publication', ['darkMode' => 'darkMode'])
     </section>
 
+    <div class="flex  w-full">
+        <hr class="w-3/5 border-1 border-indigo-600">
+    </div>
+
     <!-- Courses Section -->
     <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="courses">
         @livewire('cours', ['darkMode' => 'darkMode'])
     </section>
 
+    <div class="flex  w-full">
+        <hr class="w-3/5 border-1 border-indigo-600">
+    </div>
+
     <!-- Contact Section -->
     <section :class="{ 'py-16 bg-gray-900 text-white': darkMode, 'py-16 bg-white text-gray-900': !darkMode }" id="contact">
         @livewire('contact', ['darkMode' => 'darkMode'])
     </section>
+
+    <div class="flex  w-full">
+        <hr class="w-3/5 border-1 border-indigo-600">
+    </div>
 </div>
