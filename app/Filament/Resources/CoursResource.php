@@ -14,9 +14,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\ViewField;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-
 
 class CoursResource extends Resource
 {
@@ -26,42 +26,89 @@ class CoursResource extends Resource
 
     protected static ?string $navigationGroup = 'Content Management';
 
+    /**
+     * Helper method to generate PDF URL
+     */
+    public static function generatePdfUrl($state): string
+    {
+        // First try the URL from config
+        $baseUrl = config('filesystems.disks.do.url');
+
+        // If URL is not set, use the endpoint instead
+        if (!$baseUrl) {
+            $baseUrl = config('filesystems.disks.do.endpoint');
+        }
+
+        // Build the complete URL
+        if ($baseUrl && $state) {
+            // Ensure there's no double slash when joining paths
+            $baseUrl = rtrim($baseUrl, '/');
+            $state = ltrim($state, '/');
+
+            return $baseUrl . '/' . $state;
+        }
+
+        return '';
+    }
+
     public static function form(Form $form): Form
     {
-        set_time_limit(300);
         return $form
             ->schema([
                 TextInput::make('titre')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->columnSpan(2),
+
                 Textarea::make('description')
-                    ->maxLength(65535),
-                    FileUpload::make('content')
+                    ->maxLength(65535)
+                    ->columnSpan(2),
+
+                FileUpload::make('content')
                     ->disk('do')
-                    ->directory(env('DO_DIRECTORY', 'uploads')) // fallback to 'uploads' if not in .env
-                    ->visibility('public')
-                    ->preserveFilenames()
-                    ->getUploadedFileUrlUsing(function ($file) {
-                        return config('filesystems.disks.do.url') . '/' .
-                            env('DO_DIRECTORY', 'uploads') . '/' . $file->getClientOriginalName();
-                    }),
+                    ->directory(config('filesystems.disks.do.directory_env'))
+                    ->acceptedFileTypes(['application/pdf'])
+                    ->helperText('Upload PDF files only')
+                    ->downloadable()
+                    ->openable()
+                    ->previewable() // Enable preview for uploaded files
+                    ->columnSpan(1),
+
+                // Preview existing PDF when editing
+                Forms\Components\Section::make('PDF Preview')
+                    ->schema([
+                        ViewField::make('pdf_preview')
+                            ->view('components.pdf-preview')
+                            ->visible(fn (Forms\Get $get) => (bool)$get('content'))
+                    ])
+                    ->columnSpan(1)
+                    ->visible(fn ($record) => $record && $record->content),
+
                 Hidden::make('utilisateur_id')
                     ->default(fn () => Auth::id())
                     ->required(),
-            ]);
+            ])
+            ->columns(2);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('titre')->searchable()->sortable(),
-                TextColumn::make('description')->limit(50),
+                TextColumn::make('titre')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('description')
+                    ->limit(50),
             ])
             ->filters([
                 // Add filters if needed
             ])
             ->actions([
+                Tables\Actions\ViewAction::make()
+                    ->modalContent(fn ($record) => view('components.pdf-modal', ['record' => $record]))
+                    ->modalWidth('4xl'),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
