@@ -19,10 +19,10 @@
                     You need to be logged in to view publications.
                 </p>
                 <div class="flex justify-center space-x-4">
-                    <a href="/login" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded transition duration-300">
+                    <a wire:navigate href="/auth/login" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded transition duration-300">
                         Login
                     </a>
-                    <a href="/register" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded transition duration-300">
+                    <a wire:navigate href="/auth/register" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded transition duration-300">
                         Register
                     </a>
                 </div>

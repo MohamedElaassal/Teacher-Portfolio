@@ -41,40 +41,14 @@
                     </div>
                 @endforeach
             @else
-                <!-- Default Skills if no skills are added -->
-                <!-- Skill Card 1 - Teamwork -->
-                <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 p-6 rounded-lg shadow-md text-center"
                     :class="{
-                        'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
-                        'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
+                        'bg-gray-800 text-gray-300': darkMode,
+                        'bg-white text-gray-600': !darkMode
                     }">
-                    <h3 class="text-xl font-semibold mb-2">Teamwork</h3>
-                    <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
-                        Collaborating effectively with others to achieve common goals.
-                    </p>
-                </div>
-
-                <!-- Skill Card 2 - Communication -->
-                <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
-                    :class="{
-                        'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
-                        'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
-                    }">
-                    <h3 class="text-xl font-semibold mb-2">Communication</h3>
-                    <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
-                        Clearly conveying ideas and information to students and colleagues.
-                    </p>
-                </div>
-
-                <!-- Skill Card 3 - Research -->
-                <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
-                    :class="{
-                        'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
-                        'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
-                    }">
-                    <h3 class="text-xl font-semibold mb-2">Research</h3>
-                    <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
-                        Conducting thorough academic research to stay current in the field.
+                    <p class="text-lg font-medium">No skills available at the moment</p>
+                    <p class="mt-2 text-sm" :class="{ 'text-gray-400': darkMode, 'text-gray-500': !darkMode }">
+                        Skills information will be added soon.
                     </p>
                 </div>
             @endif
