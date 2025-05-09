@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('social_provider_user', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('utilisateurs')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('provider_slug'); // maps to providers slug in the devdojo.auth.providers
 
             $table->string('provider_user_id');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->text('provider_data')->nullable(); // JSON data containing additional provider data we want to include
 
-            $table->string('token');
+            $table->string('token', 400);
             $table->string('refresh_token')->nullable();
             $table->timestamp('token_expires_at')->nullable();
             $table->timestamps();
