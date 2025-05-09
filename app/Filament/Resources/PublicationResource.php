@@ -38,7 +38,7 @@ class PublicationResource extends Resource
                 ]),
                 RichEditor::make('content')
                 ->columnSpan('full'),
-                Hidden::make('utilisateur_id')
+                Hidden::make('user_id')
                     ->default(fn () => Auth::id())
                     ->required(),
             ]);
