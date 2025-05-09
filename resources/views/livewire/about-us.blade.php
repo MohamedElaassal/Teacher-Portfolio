@@ -27,41 +27,57 @@
     <div class="mt-16 py-8" :class="{ 'bg-gray-900 text-white': darkMode, 'bg-white text-gray-900': !darkMode }">
         <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 text-center mb-12">Skills</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Skill Card 1 - Teamwork -->
-            <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
-                :class="{
-                    'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
-                    'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
-                }">
-                <h3 class="text-xl font-semibold mb-2">Teamwork</h3>
-                <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
-                    Collaborating effectively with others to achieve common goals.
-                </p>
-            </div>
+            @if($admin->skills && count($admin->skills) > 0)
+                @foreach($admin->skills as $skill)
+                    <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
+                        :class="{
+                            'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
+                            'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
+                        }">
+                        <h3 class="text-xl font-semibold mb-2">{{ $skill['title'] }}</h3>
+                        <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
+                            {{ $skill['description'] }}
+                        </p>
+                    </div>
+                @endforeach
+            @else
+                <!-- Default Skills if no skills are added -->
+                <!-- Skill Card 1 - Teamwork -->
+                <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
+                    :class="{
+                        'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
+                        'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
+                    }">
+                    <h3 class="text-xl font-semibold mb-2">Teamwork</h3>
+                    <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
+                        Collaborating effectively with others to achieve common goals.
+                    </p>
+                </div>
 
-            <!-- Skill Card 2 - Communication -->
-            <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
-                :class="{
-                    'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
-                    'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
-                }">
-                <h3 class="text-xl font-semibold mb-2">Communication</h3>
-                <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
-                    Clearly conveying ideas and information to students and colleagues.
-                </p>
-            </div>
+                <!-- Skill Card 2 - Communication -->
+                <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
+                    :class="{
+                        'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
+                        'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
+                    }">
+                    <h3 class="text-xl font-semibold mb-2">Communication</h3>
+                    <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
+                        Clearly conveying ideas and information to students and colleagues.
+                    </p>
+                </div>
 
-            <!-- Skill Card 3 - Research -->
-            <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
-                :class="{
-                    'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
-                    'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
-                }">
-                <h3 class="text-xl font-semibold mb-2">Research</h3>
-                <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
-                    Conducting thorough academic research to stay current in the field.
-                </p>
-            </div>
+                <!-- Skill Card 3 - Research -->
+                <div class="p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105"
+                    :class="{
+                        'bg-gray-800 text-indigo-400 hover:bg-indigo-600 hover:text-white': darkMode,
+                        'bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white': !darkMode
+                    }">
+                    <h3 class="text-xl font-semibold mb-2">Research</h3>
+                    <p :class="{ 'text-gray-300 group-hover:text-white': darkMode, 'text-gray-600 group-hover:text-white': !darkMode }">
+                        Conducting thorough academic research to stay current in the field.
+                    </p>
+                </div>
+            @endif
         </div>
     </div>
 

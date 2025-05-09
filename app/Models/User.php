@@ -14,7 +14,11 @@ class User extends Authenticatable implements HasName
 
     protected $fillable = [
         'name', 'nickname', 'email', 'password', 'biographie',
-        'img', 'google_scholar', 'is_admin'
+        'img', 'google_scholar', 'is_admin', 'skills'
+    ];
+
+    protected $casts = [
+        'skills' => 'array',
     ];
 
     protected $hidden = [

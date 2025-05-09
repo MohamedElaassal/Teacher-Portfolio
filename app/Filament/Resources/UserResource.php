@@ -37,8 +37,7 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                TextInput::make('nickname')
-                    ->maxLength(255),
+
 
                 TextInput::make('email')
                     ->email()
@@ -64,6 +63,23 @@ class UserResource extends Resource
                 TextInput::make('google_scholar')
                     ->url()
                     ->maxLength(255),
+
+                Forms\Components\Section::make('Skills')
+                    ->schema([
+                        Forms\Components\Repeater::make('skills')
+                            ->schema([
+                                Forms\Components\TextInput::make('title')
+                                    ->required()
+                                    ->maxLength(100),
+                                Forms\Components\Textarea::make('description')
+                                    ->required()
+                                    ->maxLength(255),
+                            ])
+                            ->columnSpan(2)
+                            ->defaultItems(0)
+                            ->reorderable()
+                            ->collapsible(),
+                    ]),
             ]),
         ];
 
