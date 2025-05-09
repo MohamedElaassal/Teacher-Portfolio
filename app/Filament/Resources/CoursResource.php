@@ -84,8 +84,18 @@ class CoursResource extends Resource
                     ->columnSpan(1)
                     ->visible(fn ($record) => $record && $record->content),
 
-                Hidden::make('utilisateur_id')
-                    ->default(fn () => Auth::id())
+                Hidden::make('user_id')
+                    ->default(function () {
+                        // Get the authenticated User model
+                        $user = Auth::user();
+
+                        if ($user) {
+                            return $user->id;
+                        }
+
+                        // If no user found, create a new error message
+                        throw new \Exception('No authenticated user found. Please log in again.');
+                    })
                     ->required(),
             ])
             ->columns(2);

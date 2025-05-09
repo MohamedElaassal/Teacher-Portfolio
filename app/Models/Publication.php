@@ -10,11 +10,11 @@ class Publication extends Model
     use HasFactory;
 
     protected $fillable = [
-        'utilisateur_id', 'titre', 'lien', 'content'
+        'user_id', 'titre', 'lien', 'content'
     ];
 
-    public function utilisateur()
+    public function user()
     {
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(User::class);
     }
 }

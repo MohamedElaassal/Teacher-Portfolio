@@ -14,7 +14,7 @@ class AboutUs extends Component
     public $admin;
 
     public function mount(){
-        $this->admin = User::where('is_admin', 1)->first();
+        $this->admin = User::where('is_admin', 0)->first();
     }
 
 
